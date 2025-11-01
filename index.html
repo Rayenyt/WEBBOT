@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ذكرياتي ✨</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Tajawal',sans-serif;}
+body{color:#fff;overflow-x:hidden;position:relative;height:100vh;background:#0b1220;}
+
+/* خلفية متحركة */
+body::before{
+  content:'';
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:linear-gradient(270deg,#0b1220,#101b38,#0b1220,#101b38);
+  background-size:800% 800%;
+  animation:gradientBG 30s ease infinite;
+  z-index:-2;
+}
+@keyframes gradientBG{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* جسيمات ضوئية */
+.particle{
+  position:absolute;
+  width:6px; height:6px;
+  background:rgba(255,255,255,0.3);
+  border-radius:50%;
+  animation:float 10s linear infinite;
+}
+@keyframes float{
+  0%{transform:translateY(0) translateX(0);}
+  50%{transform:translateY(-100vh) translateX(50px);}
+  100%{transform:translateY(0) translateX(0);}
+}
+
+header{text-align:center;padding:80px 20px;background:rgba(11,18,32,0.6);box-shadow:0 0 30px #1e2a50;backdrop-filter:blur(5px);}
+.title{font-size:3em;animation:glow 3s infinite alternate;}
+.subtitle{font-size:1.2em;margin-top:10px;opacity:.8;}
+
+.gallery{padding:50px 20px;text-align:center;}
+.gallery h2{font-size:2em;margin-bottom:20px;color:#f8d47c;text-shadow:0 0 10px #f8d47c;}
+.photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;justify-items:center;}
+.photo-container{position:relative;overflow:hidden;cursor:pointer;}
+.photo-text{position:absolute;bottom:15px;right:15px;background:rgba(0,0,0,.6);padding:8px 12px;border-radius:12px;font-size:1em;color:#f8d47c;max-width:90%;text-align:right;opacity:0;transition:all 0.5s;}
+.photos img{width:100%;height:auto;border-radius:20px;box-shadow:0 0 15px rgba(255,255,255,.3);transform:scale(0.95);transition:all .5s ease;opacity:0;}
+.photos img:hover{transform:scale(1.05) rotate(1deg);box-shadow:0 0 25px rgba(255,255,255,.5);}
+
+.about{padding:60px 20px;background:rgba(255,255,255,.05);text-align:center;}
+.about h2{color:#91e4fb;margin-bottom:20px;text-shadow:0 0 15px #3fc1ff;}
+#typing-text{font-size:1.2em;color:#ddd;line-height:1.8;min-height:80px;display:inline-block;}
+
+footer{text-align:center;padding:20px;background:rgba(8,13,24,0.8);border-top:1px solid rgba(255,255,255,.1);}
+.glow{color:#f8d47c;text-shadow:0 0 10px #f8d47c;}
+@keyframes glow{from{text-shadow:0 0 10px #f8d47c;}to{text-shadow:0 0 30px #ffea9f;}}
+@keyframes fadeIn{0%{opacity:0;transform:translateY(40px);}100%{opacity:1;transform:translateY(0);}}
+
+.music-btn{position:fixed;top:20px;left:20px;background:rgba(255,255,255,0.1);border:2px solid #f8d47c;border-radius:50%;width:55px;height:55px;cursor:pointer;box-shadow:0 0 15px #f8d47c55;display:flex;align-items:center;justify-content:center;transition:all .3s;backdrop-filter:blur(5px);z-index:100;}
+.music-btn:hover{transform:scale(1.1);box-shadow:0 0 25px #f8d47caa;}
+.music-btn span{font-size:22px;color:#f8d47c;}
+
+/* نافذة عرض الصورة الكبيرة */
+#lightbox{
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  background:rgba(0,0,0,0.85);display:none;align-items:center;justify-content:center;
+  z-index:999;
+}
+#lightbox img{
+  max-width:90%; max-height:90%;
+  border-radius:20px; box-shadow:0 0 50px rgba(255,255,255,0.8);
+  animation:zoomIn 0.5s ease;
+}
+@keyframes zoomIn{0%{transform:scale(0.5);opacity:0;}100%{transform:scale(1);opacity:1;}}
+#lightbox span{position:absolute;top:30px;right:30px;font-size:40px;color:#fff;cursor:pointer;}
+</style>
+</head>
+<body>
+
+<header>
+<h1 class="title">ذكريـــاتي ✨</h1>
+<p class="subtitle">لحظات لا تُنسى محفورة في القلب 💖</p>
+</header>
+
+<section class="gallery">
+<h2>📸 ألبوم الصور</h2>
+<div class="photos">
+  <div class="photo-container">
+    <img src="https://www2.0zz0.com/2025/11/01/03/424337514.jpg" alt="صورة 1">
+    <div class="photo-text">أجمل لحظة تحت السماء الصافية 💖</div>
+  </div>
+  <div class="photo-container">
+    <img src="https://www2.0zz0.com/2025/11/01/03/726757149.jpg" alt="صورة 2">
+    <div class="photo-text">ابتسامة لا تُنسى 😊</div>
+  </div>
+  <div class="photo-container">
+    <img src="https://www2.0zz0.com/2025/11/01/03/899147355.jpg" alt="صورة 3">
+    <div class="photo-text">لحظات حب وعطاء ❤️</div>
+  </div>
+  <div class="photo-container">
+    <img src="https://www2.0zz0.com/2025/11/01/03/242567281.jpg" alt="صورة 4">
+    <div class="photo-text">ذكريات محفورة في القلب 💫</div>
+  </div>
+  <div class="photo-container">
+    <img src="https://www2.0zz0.com/2025/11/01/03/614529555.jpg" alt="صورة 5">
+    <div class="photo-text">لحظات لا تُنسى مع الأحباب 💖</div>
+  </div>
+  <div class="photo-container">
+    <img src="https://www2.0zz0.com/2025/11/01/03/654156368.jpg" alt="صورة 6">
+    <div class="photo-text">حب وسعادة بلا حدود 💕</div>
+  </div>
+</div>
+</section>
+
+<section class="about">
+<h2>💌 عنّي</h2>
+<p id="typing-text"></p>
+</section>
+
+<footer>
+<p>© 2025 جميع الحقوق محفوظة | تصميم <span class="glow">ذكرياتي</span></p>
+</footer>
+
+<button class="music-btn" id="musicToggle"><span>🔊</span></button>
+<audio id="bgMusic" loop>
+  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_7d5b7e8318.mp3" type="audio/mpeg">
+</audio>
+
+<!-- نافذة Lightbox -->
+<div id="lightbox">
+  <span id="closeLightbox">&times;</span>
+  <img src="" alt="صورة كبيرة">
+</div>
+
+<script>
+// كتابة متحركة للنص
+const text="أنا أحب الاحتفاظ بالذكريات الجميلة لأنها تجعل قلبي يبتسم في كل مرة أتذكرها ❤️.";
+const typingText=document.getElementById("typing-text");
+let i=0;
+function type(){if(i<text.length){typingText.innerHTML+=text.charAt(i);i++;setTimeout(type,80);}else{setTimeout(()=>{typingText.innerHTML="";i=0;type();},5000);}}
+type();
+
+// ظهور الصور والنصوص
+const images=document.querySelectorAll(".photos img");
+const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.style.opacity="1";entry.target.style.animation="fadeIn 1s forwards";entry.target.nextElementSibling.style.opacity="1";}});},{threshold:0.3});
+images.forEach(img=>observer.observe(img));
+
+// موسيقى
+const bgMusic=document.getElementById("bgMusic");
+const musicToggle=document.getElementById("musicToggle");
+let isPlaying=false;
+function playMusic(){bgMusic.play();isPlaying=true;musicToggle.innerHTML="<span>🔈</span>";}
+function pauseMusic(){bgMusic.pause();isPlaying=false;musicToggle.innerHTML="<span>🔊</span>";}
+musicToggle.addEventListener("click",()=>{isPlaying?pauseMusic():playMusic();});
+document.body.addEventListener("click",()=>{if(!isPlaying)playMusic();},{once:true});
+
+// جسيمات ضوئية
+for(let j=0;j<40;j++){
+  let particle=document.createElement("div");
+  particle.classList.add("particle");
+  particle.style.left=Math.random()*100+"%";
+  particle.style.top=Math.random()*100+"%";
+  particle.style.width=Math.random()*6+2+"px";
+  particle.style.height=particle.style.width;
+  particle.style.animationDuration=5+Math.random()*10+"s";
+  document.body.appendChild(particle);
+}
+
+// Lightbox عند النقر على الصورة
+const lightbox=document.getElementById("lightbox");
+const lightboxImg=lightbox.querySelector("img");
+const closeLB=document.getElementById("closeLightbox");
+
+images.forEach(img=>{
+  img.addEventListener("click",()=>{
+    lightbox.style.display="flex";
+    lightboxImg.src=img.src;
+  });
+});
+closeLB.addEventListener("click",()=>{lightbox.style.display="none";});
+lightbox.addEventListener("click",e=>{if(e.target===lightbox)lightbox.style.display="none";});
+</script>
+</body>
+</html>
